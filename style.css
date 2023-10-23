@@ -19,6 +19,7 @@ body {
     background-image: url(./img/backgrounds/backgroundTavern.png);
     background-size: cover;
     color: var(--white);
+    overflow: hidden;
 }
 
 h1 {
