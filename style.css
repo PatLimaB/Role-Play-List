@@ -56,7 +56,7 @@ h1 {
 .columnaDerecha {
     background-image: url(./img/backgrounds/pergamino.png);
     background-size: cover;
-    height: 625px;
+    height: 90%;
     width: 40%;
     display: flex;
     flex-direction: column;
