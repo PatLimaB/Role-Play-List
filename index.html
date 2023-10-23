@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role-Play-List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+
+</head>
+
+<body>
+    <h1> Role-Play-List</h1>
+    <div class="columns">
+    <div class="columnaIzquierda">
+        <div class="playList">
+            <p id="title1" class="songItem">Tavern</p>
+            <p id="title2" class="songItem">Market</p>
+            <p id="title3" class="songItem">Epic Fight</p>
+
+            <audio src="./sonidos/Tavern.mp3" id="song1"></audio>
+            <audio src="./sonidos/Market.mp3" id="song2"></audio>
+            <audio src="./sonidos/EpicFight.mp3" id="song3"></audio>
+        </div>
+    </div>
+
+    <div class="columnaDerecha">
+        <h2>Bardo OnLine</h2>
+        <p id="showTitle">Preparando el laúd...</p>
+        <img src="./img/backgrounds/chibiTavern.jpg" id="songImage">
+        <input type="range" id="duration" value="0">
+        <div class="buttons">
+            <img src="./img/icons/loop.png" class="button">
+            <img src="./img/icons/back.png" class="button">
+            <img src="./img/icons/play.png" class="button">
+            <img src="./img/icons/forward.png" class="button">
+            <img src="./img/icons/random.png" class="button">
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

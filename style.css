@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'UncialAntiqua';
+    src: url('./fonts/UncialAntiqua-Regular.ttf') format('truetype');
+}
+
+:root {
+    --dark-brown: #270F0D;
+    --white: #fefff8;
+    --vanille: #f7e1b5;
+}
+
+body {
+    font-family: 'UncialAntiqua', sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(./img/backgrounds/backgroundTavern.png);
+    background-size: cover;
+    color: var(--white);
+}
+
+h1 {
+    font-size: 35px;
+    margin-top: 20px;
+}
+
+.columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+}
+
+.columnaIzquierda {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.columnaDerecha,
+.columnaIzquierda {
+    text-align: center;
+}
+
+.playList {
+    background: rgb(0 0 0 / 40%);
+    width: 420px;
+    font-size: 20px;
+}
+
+.columnaDerecha {
+    background-image: url(./img/backgrounds/pergamino.png);
+    background-size: cover;
+    height: 550px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-brown);
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 23px;
+}
+
+.columnaDerecha p {
+    margin: 10px;
+    font-size: 18px;
+}
+
+#songImage {
+    height: 160px;
+    border-radius: 50%;
+}
+
+.button {
+    height: 50px;
+}
+
+.button:hover,
+.songItem:hover {
+    cursor: pointer;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 50%;
+    margin: 15px 0;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 50%;
+    height: 4px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: var(--dark-brown); /* Color de fondo del rango */
+    border-radius: 25px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 2px solid var(--dark-brown); /* Color del borde del control deslizante */
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background:  var(--vanille); /* Color del círculo */
+    cursor: pointer;
+    margin-top: -8px;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: var(--dark-brown); /* Color de fondo del rango al enfocar */
+}
