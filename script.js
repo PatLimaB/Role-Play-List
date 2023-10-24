@@ -99,7 +99,7 @@ playButtonElement.addEventListener('click', () => {
 
 });
 
-// Función para cambiar el icono a play al finalizar la canción
+// Función para controlar el comportamiento de loop y random al finalizar la canción
 songs.forEach((song) => {
     song.addEventListener('ended', () => {
         if (isLooping) {
