@@ -41,7 +41,6 @@ const songTitles = [
     'Epic Fight'
 ];
 
-// Variables de control
 let currentSongIndex = 0; // Índice de la canción actual
 let isLooping = false; // Boolean para saber si la canción está en bucle
 let isRandom = false; // Boolean para saber si la reproducción está en aleatorio
