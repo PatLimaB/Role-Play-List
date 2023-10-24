@@ -223,24 +223,12 @@ function changeSongImage() {
 
 // Función para cambiar el fondo junto con la canción
 function changeBackgroundImage() {
-    if (currentSongIndex === 0) {
-        bodyElement.style.backgroundImage = `url(${songBackgrounds[0]})`;
-    } else if (currentSongIndex === 1) {
-        bodyElement.style.backgroundImage = `url(${songBackgrounds[1]})`;
-    } else if (currentSongIndex === 2) {
-        bodyElement.style.backgroundImage = `url(${songBackgrounds[2]})`;
-    }
+    bodyElement.style.backgroundImage = `url(${songBackgrounds[currentSongIndex]})`;
 }
 
 // Función para que se vaya modificando el título de la canción
 function changeTitle() {
-    if (currentSongIndex === 0) {
-        titleElement.innerText = songTitles[0];
-    } else if (currentSongIndex === 1) {
-        titleElement.innerText = songTitles[1];
-    } else if (currentSongIndex === 2) {
-        titleElement.innerText = songTitles[2];
-    }
+    titleElement.innerText = songTitles[currentSongIndex];
 }
 
 // Agregamos event listeners a cada elemento de canción (la lista de canciones que queda a la izquierda de la pantalla)
