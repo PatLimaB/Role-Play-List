@@ -16,7 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(./img/backgrounds/backgroundTavern.png);
+    background-image: url(./img/backgrounds/backgroundDefault.png);
     background-size: cover;
     color: var(--white);
     overflow: hidden;
@@ -92,10 +92,30 @@ h2 {
     cursor: pointer;
 }
 
+.timeDisplay {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    width: 50%;
+}
+
+#currentTime, #totalTime {
+    font-size: 14px;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+#songImage, #showTitle, body {
+    transition: all 0.5s ease;
+}  
+
+/* A partir de aquí le daremos estilo a la barra medidora del tiempo */
 input[type="range"] {
     -webkit-appearance: none;
     width: 50%;
-    margin: 15px 0;
+    margin: 15px 0 5px 0;
 }
 
 input[type="range"]:focus {

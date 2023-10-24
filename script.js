@@ -10,7 +10,8 @@ let durationElement = document.getElementById("duration");
 let songItems = document.querySelectorAll('.songItem'); // Obtenemos un array con todos los songItem, que son los títulos de cada canción a los que se les podrá hacer clic para cambiar la canción
 let bodyElement = document.querySelector("body");
 let titleElement = document.getElementById("showTitle");
-
+let currentTimeElement = document.getElementById('currentTime');
+let totalTimeElement = document.getElementById('totalTime');
 
 // Obtenemos los elementos de audio y los almacenamos en un array
 const songs = [
@@ -42,9 +43,9 @@ const songTitles = [
 
 // Variables de control
 let currentSongIndex = 0; // Índice de la canción actual
-let isLooping = false; // Bandera para controlar el bucle
-let isRandom = false; // Bandera para controlar la reproducción aleatoria
-let songDuration;
+let isLooping = false; // Boolean para saber si la canción está en bucle
+let isRandom = false; // Boolean para saber si la reproducción está en aleatorio
+let songDuration;   
 let currentSong;
 let currentTime;
 
@@ -65,7 +66,7 @@ function reproducirCancion(index) {
     }
 
     playSong();
-    // Cambia la imagen de la canción según el título de la canción
+    // Cambiamos las imágenes asociadas a la canción y el título que se muestra
     changeSongImage();
     changeBackgroundImage();
     changeTitle();
@@ -75,6 +76,8 @@ function reproducirCancion(index) {
 function playSong() {
     currentSong.play();
     playButtonElement.src = "./img/icons/pause.png";
+
+    // Cambiamos las imágenes asociadas a la canción y el título que se muestra
     changeSongImage();
     changeBackgroundImage();
     changeTitle();
@@ -84,7 +87,6 @@ function playSong() {
 function pauseSong() {
     currentSong.pause();
     playButtonElement.src = "./img/icons/play.png";
-
 }
 
 // Agregamos un event listener al botón de reproducción
@@ -114,12 +116,32 @@ songs.forEach((song) => {
     });
 });
 
+// Para mostrar el valor del tiempo actual de la canción y su duración total, tendremos que formatear el tiempo:
+function formatTime (time) {
+    let minutes = Math.floor(time/60);
+    let seconds = Math.floor(time%60);
+
+    //Mantenemos el formato de dos dígitos de los segundos de la siguiente manera:
+    if (seconds>10){
+        return `${minutes}:${seconds}`;
+    } else {
+        return `${minutes}:0${seconds}`;
+    }
+}
+
 // Función para actualizar el input range con el tiempo de la canción
 function actualizarTiempoCancion() {
     currentSong = songs[currentSongIndex];
     songDuration = currentSong.duration;
     currentTime = currentSong.currentTime;
     durationElement.value = (currentTime / songDuration) * 100; // Introducimos el porcentaje en el value, ya que este va de 1 a 100
+
+    //Mostramos el tiempo actual y la duración de la canción actual
+    currentTimeElement.innerText = formatTime(currentTime);
+    currentTimeElement.classList.remove("hidden");
+    totalTimeElement.innerText = formatTime(songDuration);
+    totalTimeElement.classList.remove("hidden");
+
 }
 
 // Agregamos un event listener para actualizar el tiempo de la canción
